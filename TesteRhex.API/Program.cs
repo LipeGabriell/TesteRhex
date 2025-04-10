@@ -11,9 +11,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+#region Database
+
 builder.Services.AddSqlite<ApplicationDbContext>("Data Source=./database.db");
+builder.Services.AddScoped<ApplicationDbContext>();
+
+#endregion
+
+#region Repositories
+
 builder.Services.AddScoped<IToolRepository, ToolRepository>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
+#endregion
 
 var app = builder.Build();
 

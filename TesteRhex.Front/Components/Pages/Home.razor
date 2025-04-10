@@ -1,13 +1,53 @@
 ﻿@page "/"
+@using System.Diagnostics
+@using TesteRhex.Data
+
+@inject HttpClient Http;
 
 <PageTitle>Home</PageTitle>
 
-<div class="container align-items-center justify-content-center w-auto h-auto bg-primary gap-2">
+<div class="container align-items-center justify-content-center w-auto h-auto gap-2">
     <h1 class="w-auto text-center">CRUD Ferramentas</h1>
 
+    <div>
+        <Interactive>
+            <button @onclick="GetToolsAsync">Consultar todas as ferramentas</button>
+        </Interactive>
+
+        <p>@Message</p> <!-- mensagem de log -->
+
+        <div>
+            @if (Tools != null && Tools.Length > 0)
+            {
+                @foreach (var tool in Tools)
+                {
+                    <p>Id: @tool.Id | Endereço: @tool.Address</p>
+                }
+            }
+            else
+            {
+                <p>Nenhuma ferramenta carregada.</p>
+            }
+        </div>
+    </div>
 </div>
 
-@code
-{
+@code {
+    private Tool[] Tools { get; set; } = [];
+    private string Message { get; set; } = "";
+
+    private async Task GetToolsAsync()
+    {
+        try
+        {
+            Message = "Buscando ferramentas...";
+            Tools = await Http.GetFromJsonAsync<Tool[]>("api/tool") ?? [];
+            Message = $"Foram encontradas {Tools.Length} ferramentas.";
+        }
+        catch (Exception ex)
+        {
+            Message = $"Erro: {ex.Message}";
+        }
+    }
 
 }
