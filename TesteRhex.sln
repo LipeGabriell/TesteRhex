@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteRhex", "TesteRhex\TesteRhex.csproj", "{72D6C82D-BD78-401E-92CD-EFF5D158BF5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteRhex.Front", "TesteRhex.Front\TesteRhex.Front.csproj", "{72D6C82D-BD78-401E-92CD-EFF5D158BF5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteRhex.API", "TesteRhex.API\TesteRhex.API.csproj", "{3FACE3AD-ADBB-4E60-8275-31B958D37771}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteRhex.SharedData", "TesteRhex.SharedData\TesteRhex.SharedData.csproj", "{C8926867-77E2-4CE0-BF49-AA0DD2CF82C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +16,13 @@ Global
 		{72D6C82D-BD78-401E-92CD-EFF5D158BF5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72D6C82D-BD78-401E-92CD-EFF5D158BF5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72D6C82D-BD78-401E-92CD-EFF5D158BF5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FACE3AD-ADBB-4E60-8275-31B958D37771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FACE3AD-ADBB-4E60-8275-31B958D37771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FACE3AD-ADBB-4E60-8275-31B958D37771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FACE3AD-ADBB-4E60-8275-31B958D37771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8926867-77E2-4CE0-BF49-AA0DD2CF82C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8926867-77E2-4CE0-BF49-AA0DD2CF82C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8926867-77E2-4CE0-BF49-AA0DD2CF82C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8926867-77E2-4CE0-BF49-AA0DD2CF82C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
