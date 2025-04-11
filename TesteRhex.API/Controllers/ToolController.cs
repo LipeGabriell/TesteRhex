@@ -24,6 +24,22 @@ public class ToolController(IToolRepository repository) : Controller
         return Ok(tool);
     }
 
+    [HttpGet("/vbit")]
+    public async Task<ActionResult<IEnumerable<VBitTool>>> GetAllVbit()
+    {
+        var tool = await repository.GetAll();
+        if (tool == null) return NotFound();
+        return Ok(tool.Where(t => t.Type == ToolType.VBit));
+    }
+
+    [HttpGet("/toporaso")]
+    public async Task<ActionResult<IEnumerable<TopoRasoTool>>> GetAllToporaso()
+    {
+        var tool = await repository.GetAll();
+        if (tool == null) return NotFound();
+        return Ok(tool.Where(t => t.Type == ToolType.TopoRaso));
+    }
+
     [HttpPost]
     public async Task<ActionResult<IEnumerable<Tool>>> CreateTool(Tool tool)
     {
